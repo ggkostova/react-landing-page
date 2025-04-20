@@ -1,0 +1,117 @@
+.icon {
+  font-size: $font-xl * 1.2;
+  @include respond-to($breakpoint-md) {
+    display: none;
+  }
+}
+
+.menuIcon {
+  color: var(--color-text-inverted);
+  margin-right: calc($space-xs * 1.6);
+  font-size: calc($font-md * 2.1);
+}
+.closeIcon {
+  color: var(--color-accent);
+  background-color: var(--color-secondary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 101%;
+  width: 60px;
+  padding: calc($space-xs / 1.5);
+  transition: transform 0.7s ease, opacity 0.7s ease;
+  @include respond-between($breakpoint-sm, $breakpoint-md) {
+    width: 60px;
+    padding: $space-xs;
+  }
+}
+.menu {
+  position: absolute;
+  top: $header-height;
+  right: 0;
+  width: 95%;
+  padding: $space-xs $space-xs * 1.5;
+  z-index: 1000;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  &.menuOpen {
+    opacity: 1;
+    pointer-events: auto;
+    @include respond-between($breakpoint-sm, $breakpoint-md) {
+      width: 60%;
+    }
+    @include respond-between($breakpoint-md, $breakpoint-lg) {
+      width: 50%;
+    }
+  }
+
+  .companyDetails {
+    list-style-type: none;
+    padding: 0;
+    margin: $space-sm 0 calc($space-xs / 2) 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: $font-sm;
+    font-weight: $font-weight-bold;
+
+    li {
+      cursor: pointer;
+      text-align: left;
+      padding: $space-xs $space-xs;
+    }
+  }
+  .productLineList {
+    font-weight: $font-weight-bold;
+  }
+
+  .siteSettings {
+    margin: $space-xs;
+    @include flex-container;
+    justify-content: space-between;
+    .container {
+      @include flex-container;
+      .flag,
+      span {
+        margin-right: 0.4rem;
+      }
+      span {
+        font-weight: $font-weight-bold;
+      }
+      .flag {
+        border-radius: $radius-md;
+      }
+      .chevronDown {
+        transition: transform 0.5s ease, color 0.5s ease;
+        color: var(--color-text-secondary);
+        font-size: $font-xs;
+        margin-bottom: calc($space-xs / 3);
+      }
+    }
+    .themeToggle {
+      @include flex-container;
+      img {
+        transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
+      }
+      .dark {
+        opacity: 1;
+        transform: rotate(180deg);
+      }
+
+      .light {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+:global(body.dark) {
+  .menuIcon {
+    color: var(--color-text);
+  }
+}

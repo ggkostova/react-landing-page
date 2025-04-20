@@ -1,0 +1,9 @@
+.dropdownList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  @include respond-to($breakpoint-md){
+    display: flex;
+  }
+}

@@ -1,0 +1,31 @@
+@mixin respond-to($breakpoint) {
+  // @if $breakpoint == sm {
+    
+  // } @else if $breakpoint == md {
+  //   @media (min-width: 769px) {
+  //     @content;
+  //   }
+  // } @else if $breakpoint == lg {
+  //   @media (min-width: 1025px) {
+  //     @content;
+  //   }
+  // } @else if $breakpoint == xl {
+  //   @media (min-width: 1280px) {
+  //     @content;
+  //   }
+  // }
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin flex-container {
+  display: flex;
+  align-items: center;
+}

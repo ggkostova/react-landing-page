@@ -1,0 +1,22 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: $header-height;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  justify-items: stretch;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverted);
+  border-bottom: 1px solid #000;
+
+  .left {
+    justify-self: start;
+    padding: 0.25rem 0 0 1rem;
+  }
+
+  .right {
+    justify-self: end;
+  }
+}

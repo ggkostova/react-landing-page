@@ -1,0 +1,101 @@
+.container {
+  width: 100%;
+  border-bottom: 2px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: $space-md;
+  margin-top: $space-sm;
+  &:last-child {
+    border: none;
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 140px 140px; 
+  grid-template-areas:
+    "type"
+    "image"
+    "content";
+  max-width: 300px;
+  overflow: hidden;
+  width: 75%;
+  height: 370px;
+}
+
+.cardType {
+  grid-area: type;
+  padding: 10px 0;
+  font-size: calc($font-md * 1.4);
+  text-align: start;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  svg {
+    color: var(--color-accent);
+  }
+  p {
+    overflow: hidden;
+    padding-left: $space-xs;
+  }
+}
+
+.imageContainer {
+  grid-area: image;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.content {
+  grid-area: content;
+  padding: 10px 27px 0 0;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+.cardTitle {
+  font-size: $font-md;
+}
+
+.date {
+  font-size: $font-xs;
+  color: var(--color-text-secondary);
+  margin: calc($space-xs / 2) calc($space-md * 2.5) $space-xs 0;
+}
+
+.description {
+  font-size: $font-md;
+  color: var(--color-text);
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 3;
+  font-size: $font-xs;
+  margin-bottom: $space-sm;
+}
+
+.cardBtn {
+  padding: $space-xs;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverted);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: $font-xs;
+  height: 2.3rem;
+}
+
+:global(body.dark) {
+  .cardBtn {
+    color: var(--color-text);
+  }
+}

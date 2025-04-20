@@ -1,0 +1,123 @@
+{
+  "dropdownItems": [
+    {
+      "label": "R-LINE",
+      "subItems": ["Premier R4", "Premier R6", "Premier R8"]
+    },
+    {
+      "label": "S-LINE",
+      "subItems": ["Option 1", "Option 2", "Option 3"]
+    },
+    {
+      "label": "T-LINE",
+      "subItems": ["Option 1", "Option 2", "Option 3"]
+    },
+    {
+      "label": "SBG",
+      "subItems": ["Option 1", "Option 2", "Option 3"]
+    }
+  ],
+  "companyDetails": [
+    { "label": "News & Events" },
+    { "label": "About us" },
+    { "label": "Contact us" }
+  ],
+  "slides": [
+    {
+      "id": 1,
+      "image": "https://picsum.photos/800/400?random=1",
+      "alt": "Slide 1",
+      "text": "Your",
+      "boldText": "Best Gaming Experience"
+    },
+    {
+      "id": 2,
+      "image": "https://picsum.photos/800/400?random=2",
+      "alt": "Slide 2",
+      "text": "Your",
+      "boldText": "Best Gaming Experience"
+    },
+    {
+      "id": 3,
+      "image": "https://picsum.photos/800/400?random=3",
+      "alt": "Slide 3",
+      "text": "Your",
+      "boldText": "Best Gaming Experience"
+    }
+  ],
+  "eventCardsData": [
+    {
+      "iconPath": "",
+      "type": "News",
+      "imagePath": "",
+      "title": "EGT is expecting FADJA Colombia 2017",
+      "date": "April 4, 2017",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "iconPath": "",
+      "type": "Events",
+      "imagePath": "",
+      "title": "Indian Gaming Show",
+      "date": "San Diego, April 10-13, 2017 Stand 1833"
+    },
+    {
+      "iconPath": "",
+      "type": "Press Releases",
+      "imagePath": "",
+      "title": "True Leader accolade for Bulgarian firm",
+      "date": "February 10, 2017",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  ],
+  "products": {
+    "title": "Our Products",
+    "list": [
+      {
+        "name": "R-Line",
+        "imagePath": ""
+      },
+      {
+        "name": "S-Line",
+        "imagePath": ""
+      },
+      {
+        "name": "T-Line",
+        "imagePath": ""
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "title": "News & Events"
+      },
+      {
+        "title": "About Us"
+      },
+      {
+        "title": "Contact Us"
+      },
+      {
+        "title": "Careers"
+      }
+    ],
+    "socialLinks": [
+      {
+        "platform": "Facebook",
+        "icon": "facebook"
+      },
+      {
+        "platform": "YouTube",
+        "icon": "youtube"
+      }
+    ],
+    "copyright": "© 2024 Euro Games Technology All rights reserved."
+  },
+  "serverData": {
+    "title": "Our Global Server Based Solution",
+    "image": "https://picsum.photos/600/300?random=1",
+    "imageText": "Octopus",
+    "imageDescription": "Server Based Gaming"
+  }
+}

@@ -1,0 +1,29 @@
+/* Default (light) theme */
+@use '../styles/variables' as *;
+
+:root {
+    --color-bg: #{$color-bg};
+    --color-text: #{$color-text};
+    --color-primary: #{$color-primary};
+    --color-secondary: #{$color-secondary};
+    --color-secondary-light: #{$color-secondary-light};
+    --color-accent: #{$color-accent};
+    --color-text-inverted: #{$color-text-inverted};
+    --color-text-secondary: #{$color-text-secondary};
+    --border-color: #{$border-color};
+
+    --font-family-base: #{$font-family-base};
+    --radius-md: #{$radius-md};
+}
+  
+/* Dark theme overrides */
+body.dark {
+    --color-bg-dark: #{$color-bg-dark};
+    --color-secondary: #{$color-secondary-dark};
+    --color-secondary-light: #513434;
+    --color-bg: var(--color-bg-dark);
+    --color-text: #{$color-text-inverted};
+    --color-text-inverted: #{$color-text};
+    --color-text-secondary: #d6d4d4;
+    --color-accent: #{$color-accent-dark};
+}
