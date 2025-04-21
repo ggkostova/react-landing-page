@@ -3,7 +3,18 @@
   padding: 0;
   margin: 0;
 
-  @include respond-to($breakpoint-md){
+  @include respond-to($breakpoint-lg) {
     display: flex;
+    position: relative;
+    height: $header-height;
+    width: 30%;
+  }
+}
+
+:global(body.dark) {
+  .dropdownList {
+    @include respond-to($breakpoint-lg) {
+      color: var(--color-text);
+    }
   }
 }

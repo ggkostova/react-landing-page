@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect} from "react";
 import styles from "@/components/Dropdown/DropdownItem/DropdownItem.module.scss";
 import { FaChevronDown } from "react-icons/fa6";
 import IconWrapper from "@/components/IconWrapper/IconWrapper";
@@ -10,13 +10,29 @@ interface DropdownItemProps {
 
 const DropdownItem: React.FC<DropdownItemProps> = ({ label, subItems }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false); 
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside); 
+    };
+  }, []);
+
   return (
     <li
+      ref={dropdownRef}
       className={`${styles.item} ${isOpen ? styles.open : ""}`}
       onClick={toggleDropdown}
     >

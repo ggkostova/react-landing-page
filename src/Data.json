@@ -6,11 +6,11 @@
     },
     {
       "label": "S-LINE",
-      "subItems": ["Option 1", "Option 2", "Option 3"]
+      "subItems": ["S32", "S32/32", "S32/32/27", "Stock"]
     },
     {
       "label": "T-LINE",
-      "subItems": ["Option 1", "Option 2", "Option 3"]
+      "subItems": ["LTTR Live", "LTTR Auto", "LTTR LC"]
     },
     {
       "label": "SBG",
@@ -87,37 +87,38 @@
       }
     ]
   },
-  "footer": {
-    "links": [
-      {
-        "title": "News & Events"
-      },
-      {
-        "title": "About Us"
-      },
-      {
-        "title": "Contact Us"
-      },
-      {
-        "title": "Careers"
-      }
-    ],
-    "socialLinks": [
-      {
-        "platform": "Facebook",
-        "icon": "facebook"
-      },
-      {
-        "platform": "YouTube",
-        "icon": "youtube"
-      }
-    ],
-    "copyright": "© 2024 Euro Games Technology All rights reserved."
-  },
   "serverData": {
     "title": "Our Global Server Based Solution",
     "image": "https://picsum.photos/600/300?random=1",
     "imageText": "Octopus",
     "imageDescription": "Server Based Gaming"
+  },
+  "footer": {
+    "solution": {
+      "label": "Our Solution",
+      "subItems": "SBG"
+    },
+    "company": {
+      "title": "Company",
+      "links": [
+        {
+          "title": "News & Events"
+        },
+        {
+          "title": "About Us"
+        },
+        {
+          "title": "Contact Us"
+        },
+        {
+          "title": "Careers"
+        }
+      ]
+    },
+    "social": {
+      "title": "SOCIAL NETWORKS"
+    },
+
+    "copyright": "© 2024 Euro Games Technology All rights reserved."
   }
 }

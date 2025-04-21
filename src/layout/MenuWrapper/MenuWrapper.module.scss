@@ -1,0 +1,114 @@
+.productLineList {
+  font-weight: $font-weight-bold;
+}
+
+.companyDetails {
+  list-style-type: none;
+  padding: 0;
+  margin: $space-sm 0 calc($space-xs / 2) 0;
+  display: flex;
+  flex-direction: column;
+  font-size: $font-sm;
+  font-weight: $font-weight-bold;
+
+  @include respond-to($breakpoint-lg) {
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    font-weight: 400;
+    font-size: calc($font-xs / 1.2);
+  }
+
+  li {
+    cursor: pointer;
+    text-align: left;
+    padding: $space-xs $space-xs;
+    @include respond-to($breakpoint-lg) {
+      padding: calc($space-xs / 1.7) $space-sm;
+      border-right: 1px solid rgba($border-color, 0.3);
+    }
+  }
+}
+
+.siteSettings {
+  margin: $space-xs;
+  justify-content: space-between;
+  
+  @include flex-container;
+  @include respond-to($breakpoint-md) {
+    margin-right: $space-sm;
+  }
+  .langContainer {
+    @include flex-container;
+    @include respond-to($breakpoint-lg) {
+      margin-right: $space-sm;
+    }
+    .flag,
+    span {
+      margin-right: calc($space-xs / 1.2);
+    }
+    span {
+      font-weight: $font-weight-bold;
+      @include respond-to($breakpoint-lg) {
+        font-size: calc($font-xs / 1.5);
+        margin-right: calc($space-xs / 2);
+        font-weight: 100;
+        color: rgba($color-text-inverted, 0.7);
+      }
+    }
+    .flag {
+      border-radius: $radius-md;
+      @include respond-to($breakpoint-lg) {
+        height: 20px;
+        width: 20px;
+      }
+    }
+    .chevronDown {
+      transition: transform 0.5s ease, color 0.5s ease;
+      color: var(--color-text-secondary);
+      font-size: $font-xs;
+      margin-bottom: calc($space-xs / 3);
+      @include respond-to($breakpoint-lg) {
+        color: rgba($color-text-inverted, 0.5);
+        font-size: calc($font-xs / 1.5);
+        margin-bottom: 0;
+      }
+    }
+  }
+  .themeToggle {
+    @include flex-container;
+    img {
+      transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
+    }
+    .dark {
+      opacity: 1;
+      transform: rotate(180deg);
+    }
+
+    .light {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.container {
+  @include respond-to($breakpoint-lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.helpers {
+  @include respond-to($breakpoint-lg) {
+    display: flex;
+  }
+}
+
+:global(body.dark) {
+  .companyDetails {
+    @include respond-to($breakpoint-lg) {
+      color: var(--color-text);
+    }
+  }
+}

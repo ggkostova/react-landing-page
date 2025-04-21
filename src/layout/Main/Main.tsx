@@ -3,7 +3,6 @@ import styles from './Main.module.scss';
 import siteData from "@/Data.json";
 import EventCard from '@/components/EventCard/EventCard';
 import ProductWrapper from '@/components/ProductWrapper/ProductWrapper';
-import Carousel from '@/components/Carousel/Carousel';
 import ImageWrapper from '@/components/ImageWrapper/ImageWrapper';
 
 const Main = () => {
@@ -13,13 +12,12 @@ const Main = () => {
 
   return (
     <main className={styles.main}>
-      <Carousel/>
       <div className={styles.eventCardsContainer}>
         {eventsData.map((event, index) => (
           <EventCard
             key={index}
             type={event.type}
-            imagePath={`https://picsum.photos/200/300?random=${index + 1}`} 
+            imagePath={`https://picsum.photos/900/450?random=${index + 1}`} 
             title={event.title}
             date={event.date}
             description={event.description || ''}

@@ -36,29 +36,32 @@ const EventCard: React.FC<EventCardProps> = ({
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <div className={styles.cardType}>
+        <div className={styles.type}>
           {getIcon(type)}
           <p>{type}</p>
         </div>
-        <div className={styles.imageContainer}>
-          <img
-            src={imagePath}
-            alt={title}
-            className={styles.image}
-            height={100}
-          />
-        </div>
+
         <div className={styles.content}>
-          <p className={styles.cardTitle}>{title}</p>
-          <p className={styles.date}>{date}</p>
-          <p className={styles.description}>{description}</p>
+          <div className={styles.imageContainer}>
+            <img
+              src={imagePath}
+              alt={title}
+              className={styles.image}
+              height={100}
+            />
+          </div>
+          <div className={styles.info}>
+            <p className={styles.title}>{title}</p>
+            <p className={styles.date}>{date}</p>
+            <p className={styles.description}>{description}</p>
+          </div>
+          <Button
+            className={styles.button}
+            onClick={() => alert("Read more clicked!")}
+          >
+            READ MORE
+          </Button>
         </div>
-        <Button
-          className={styles.cardBtn}
-          onClick={() => alert("Read more clicked!")}
-        >
-          READ MORE
-        </Button>
       </div>
     </div>
   );

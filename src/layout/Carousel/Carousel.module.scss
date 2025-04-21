@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+}
+
+.textContainer {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: $color-text-inverted;
+  font-size: calc($font-xl * 1.5);
+  @include respond-between($breakpoint-md, $breakpoint-lg) {
+    top: 30%;
+    padding: 0 $space-lg;
+  }
+  @include respond-to($breakpoint-lg) {
+    top: 30%;
+    padding: 0 calc($space-lg * 3);
+  }
+}
+
+.text {
+  width: 70%;
+  text-align: center;
+}

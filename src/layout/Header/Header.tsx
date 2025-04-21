@@ -7,10 +7,10 @@ import Logo from "@/components/Logo/Logo"
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.left}>
+      <div className={styles.logo}>
         <Logo />
       </div>
-      <div className={styles.right}>
+      <div className={styles.nav}>
         <Navigation />
       </div>
     </header>

@@ -3,8 +3,58 @@
   padding-top: calc($space-sm * 1.7);
   text-align: center;
   width: 100%;
-  @media (min-width: 768px) {
-    padding: 1.5rem;
+}
+
+.container {
+  @include respond-to($breakpoint-lg) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: calc($space-lg * 1.5);
+
+    .products {
+      color: var(--color-text-secondary);
+      display: flex;
+      border-right: 1px solid var(--border-color);
+    }
+    
+    .product {
+      width: 170px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      ul {
+        margin-top: $space-xs;
+      }
+      li {
+        margin-bottom: $space-sm;
+        font-size: calc($font-xs / 1.1);
+      }
+    }
+
+    .company {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: $space-sm;
+      h4{
+        padding: 0 $space-xs;
+      }
+      li {
+        text-align: left;
+      }
+    }
+    h4{
+      margin-bottom: $space-xs;
+      font-size: $font-xs;
+      color: rgba($color-text, .7);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .socialTitle {
+      margin-left: calc($space-lg * 1.5);
+    }
   }
 }
 
@@ -25,6 +75,9 @@
 
 .socialLinks {
   margin-bottom: calc($space-md * 1.3);
+  @include respond-to($breakpoint-lg) {
+    display: none;
+  }
 }
 
 .socialIconWrapper {
@@ -46,7 +99,7 @@
 .youtubeWrapper {
   background-color: #cc3743;
 }
-.facebookWrapper{
+.facebookWrapper {
   background-color: #2b406e;
 }
 
@@ -57,11 +110,15 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-accent);
-  color: rgba($color: $color-text-inverted, $alpha: .5);
+  color: rgba($color: $color-text-inverted, $alpha: 0.5);
 }
 
-// :global(body.dark){
-//   .footer {
-  
-//   }
-// }
+:global(body.dark) {
+  .container {
+    @include respond-to($breakpoint-lg) {
+      h4 {
+        color: var(--color-text);
+      }
+    }
+  }
+}

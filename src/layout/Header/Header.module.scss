@@ -3,20 +3,23 @@
   top: 0;
   z-index: 1000;
   height: $header-height;
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
   align-items: center;
-  justify-items: stretch;
+  justify-content: space-between;
   background-color: var(--color-accent);
   color: var(--color-text-inverted);
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--black-color);
 
-  .left {
-    justify-self: start;
-    padding: 0.25rem 0 0 1rem;
+  .logo {
+    padding: calc($space-xs / 2) $space-sm 0 $space-sm;   
+    @include respond-to($breakpoint-lg){
+      padding: 0 $space-md 0 calc($space-lg * 1.5);
+    }
   }
 
-  .right {
-    justify-self: end;
+  .nav {
+    @include respond-to($breakpoint-lg){
+      width: 90%;
+    }
   }
 }
