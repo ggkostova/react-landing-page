@@ -6,10 +6,6 @@
   margin: 15px 0;
   @include respond-from($breakpoint-lg) {
     height: 500px;
-    // margin: 0 calc($space-sm * 1.5);
-  }
-  @include respond-from($breakpoint-xl) {
-    // margin: 0 $space-md;
   }
 }
 
