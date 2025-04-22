@@ -14,12 +14,12 @@ $white: #fff;
 
 // Dark theme colors
 $color-bg-dark: #361515;
-$color-accent-dark: #b10006; 
+$color-text-secondary-dark: #d6d4d4;
 $color-secondary-dark: #9d8e81;
+$color-accent-dark: #b10006; 
 
 // Font family and other settings
 $font-family-base: 'Roboto', sans-serif;
-$radius-md: 8px;
 
 $font-xs: 0.75rem;
 $font-sm: 0.875rem;
@@ -29,7 +29,7 @@ $font-xl: 2rem;
 
 // Header height
 $header-height: 55px; /* Default height */
-$header-height-md: 80px; /* Height for larger screens */
+$header-height-large: 65px;
 
 // Spacing
 $space-xs: 0.5rem;
@@ -46,4 +46,3 @@ $breakpoint-sm: 480px;  // phones
 $breakpoint-md: 769px;  // tablets
 $breakpoint-lg: 1024px; // laptops
 $breakpoint-xl: 1280px; // large desktops
-$breakpoint-xxl: 4000px; // TV and Large Monitors

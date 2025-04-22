@@ -1,46 +1,3 @@
-.subMenu {
-  font-size: $space-xs * 1.7;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  visibility: hidden;
-  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0s 0.4s;
-
-  @include respond-to($breakpoint-lg) {
-    position: absolute;
-    top: $header-height - 1;
-    background-color: var(--color-secondary);
-    color: var(--color-text);
-    padding: calc($space-xs / 1.2) $space-xs $space-sm calc($space-xs * 1.5);
-    margin-left: -12px;
-    min-width: 135px;
-  }
-  li {
-    padding: $space-xs * 1.7;
-    &:last-child {
-      padding-bottom: 0;
-    }
-    @include respond-to($breakpoint-lg) {
-      padding: calc($space-xs * 1.3) $space-lg calc($space-xs * 1.3) $space-xs;
-      font-size: calc($font-xs / 1.1);
-      border-bottom: 1px solid var(--border-color);
-      &:last-child {
-        border: none;
-      }
-      &:hover {
-        color: var(--color-accent);
-      }
-    }
-  }
-}
-
-.subMenuOpen {
-  max-height: 500px; 
-  opacity: 1;
-  visibility: visible;
-  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0s;
-}
-
 li {
   cursor: pointer;
   text-align: left;
@@ -48,13 +5,14 @@ li {
 }
 
 .item {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: $space-sm $space-xs;
   border-bottom: 1px solid var(--border-color);
-
-  @include respond-to($breakpoint-lg) {
+  box-sizing: border-box;
+  @include respond-from($breakpoint-lg) {
     border-bottom: none;
     padding: $space-sm calc($space-xs * 1.5);
     grid-template-columns: 50px 0px;
@@ -63,19 +21,22 @@ li {
       text-align: center;
     }
   }
-
+  @include respond-from($breakpoint-xl) {
+    padding: $space-sm calc($space-xs * 2);
+    font-size: $font-xs;
+  }
   .chevronDown {
     justify-self: end;
     transition: transform 0.5s ease, color 0.5s ease;
     color: var(--color-text-secondary);
     font-size: $font-xs;
-    @include respond-to($breakpoint-lg) {
+    @include respond-from($breakpoint-lg) {
       display: none;
     }
   }
 
   &.open {
-    @include respond-to($breakpoint-lg) {
+    @include respond-from($breakpoint-lg) {
       background-color: var(--color-secondary);
     }
     .chevronDown {
@@ -84,9 +45,60 @@ li {
     }
     .label {
       color: var(--color-accent);
-      @include respond-to($breakpoint-lg) {
+      @include respond-from($breakpoint-lg) {
         color: var(--color-accent);
       }
     }
+  }
+
+  .subMenu {
+    font-size: $space-xs * 1.7;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0s 0.5s;
+  
+    @include respond-from($breakpoint-lg) {
+      position: absolute;
+      top: $header-height - 1;
+      left: 0;
+      background-color: var(--color-secondary);
+      color: var(--color-text);
+      padding: calc($space-xs / 1.2) $space-sm $space-sm calc($space-xs * 1.5);
+      min-width: 150px;
+    }
+    @include respond-from($breakpoint-xl) {
+      top: $header-height-large - 1;
+      min-width: 165px;
+      padding: calc($space-xs / 1.2) $space-sm $space-sm $space-sm;
+    }
+    li {
+      padding: $space-xs * 1.7;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      @include respond-from($breakpoint-lg) {
+        padding: calc($space-xs * 1.3) $space-md calc($space-xs * 1.3) $space-xs;
+        font-size: calc($font-xs / 1.1);
+        border-bottom: 1px solid var(--border-color);
+        &:last-child {
+          border: none;
+        }
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
+      @include respond-from($breakpoint-xl) {
+        padding: calc($space-xs * 2.2) calc($space-xs * 1.5);
+        font-size: calc($font-xs);
+      }
+    }
+  }
+  .subMenuOpen {
+    max-height: 500px; 
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out, visibility 0.4s;
   }
 }

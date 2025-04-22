@@ -3,22 +3,30 @@
   top: 0;
   z-index: 1000;
   height: $header-height;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include space-between-container;
   background-color: var(--color-accent);
   color: var(--color-text-inverted);
   border-bottom: 1px solid var(--black-color);
 
+  @include respond-from($breakpoint-lg) {
+    padding: 0 $space-lg 0 $space-lg;
+  }
+  @include respond-from($breakpoint-xl) {
+    height: $header-height-large;
+    padding: 0 calc($space-lg * 1.5) 0 calc($space-lg * 2.5);
+  }
   .logo {
     padding: calc($space-xs / 2) $space-sm 0 $space-sm;   
-    @include respond-to($breakpoint-lg){
+    @include respond-from($breakpoint-lg){
       padding: 0 $space-md 0 calc($space-lg * 1.5);
+    }
+    @include respond-from($breakpoint-xl) {
+      padding: 0;
     }
   }
 
   .nav {
-    @include respond-to($breakpoint-lg){
+    @include respond-from($breakpoint-lg){
       width: 90%;
     }
   }

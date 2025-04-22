@@ -1,24 +1,30 @@
 .container {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-centered-container;
   padding-bottom: $space-md;
   margin-top: $space-sm;
+  flex-wrap: wrap;
+  align-items: stretch;
+
   &:not(:last-child) {
     border-bottom: 2px solid #ddd;
   }
-  @include respond-to($breakpoint-lg) {
+
+  @include respond-from($breakpoint-lg) {
     width: 30%;
+
     &:not(:last-child) {
-      border-bottom: none;  
+      border-bottom: none;
+
       .content {
         border-right: 2px solid #ddd;
       }
     }
+
     .content {
-      padding: 0 $space-md
-    } 
+      padding: 0 $space-md;
+    }
+
     .borderedContent {
       background-color: aqua;
     }
@@ -27,69 +33,79 @@
 
 .card {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px 280px; 
+  grid-template-rows: auto 1fr;
   grid-template-areas:
     "type"
     "content";
-  height: 370px;
-  width: 75%;
+  width: 100%;
   max-width: 300px;
+  min-height: 350px;
+  height: 100%;
   overflow: hidden;
+  background-color: white;
+
   @include respond-between($breakpoint-sm, $breakpoint-md) {
-    grid-template-rows: 50px 350px; 
-    height: 400px;
     max-width: 90%;
     width: 80%;
   }
+
   @include respond-between($breakpoint-md, $breakpoint-lg) {
-    grid-template-rows: 50px 450px; 
-    height: 500px;
     max-width: 90%;
     width: 80%;
   }
-  @include respond-to($breakpoint-lg) {
+
+  @include respond-from($breakpoint-lg) {
     width: 100%;
     max-width: 100%;
+    min-height: 450px;
   }
 }
 
 .content {
+  grid-area: content;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 140px 140px 35px; 
   grid-template-areas:
-  "image"
-  "text"
-  "button";
-  height: 315px;
+    "image"
+    "text"
+    "button";
+  grid-template-rows: 3fr 2.5fr auto; 
   width: 100%;
+  height: 100%;
   @include respond-between($breakpoint-sm, $breakpoint-md) {
-    grid-template-rows: 200px 115px 35px; 
-    height: 350px;
+    grid-template-rows: 1.5fr 1fr auto; 
   }
   @include respond-between($breakpoint-md, $breakpoint-lg) {
-    grid-template-rows: 300px 110px 35px;
-    height: 445px;
+    grid-template-rows: 1fr .4fr auto;
+  }
+  @include respond-between($breakpoint-lg, $breakpoint-xl) {
+    grid-template-rows: 1.6fr .7fr auto;
+  }
+  @include respond-from($breakpoint-xl) {
+    grid-template-rows: 2.2fr 1.1fr auto;
   }
 }
 
 .type {
   grid-area: type;
-  padding: 10px 0;
+  padding: 10px $space-xs;
   font-size: calc($font-md * 1.4);
   text-align: start;
   color: var(--color-text);
   display: flex;
   align-items: center;
+  @include respond-from($breakpoint-lg){
+    font-size: calc($font-md * 1.2);
+  }
   svg {
     color: var(--color-accent);
   }
+
   p {
     overflow: hidden;
     padding-left: $space-xs;
   }
-  @include respond-to($breakpoint-lg) {
+
+  @include respond-from($breakpoint-lg) {
     padding-left: $space-md;
   }
 }
@@ -97,49 +113,78 @@
 .imageContainer {
   grid-area: image;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
   width: 100%;
-  height: 140px;
+  max-height: 200px;
   object-fit: cover;
+  height: 100%;
+
   @include respond-between($breakpoint-sm, $breakpoint-md) {
-    height: 200px;
+    max-height: 200px;
   }
-  @include respond-between($breakpoint-md, $breakpoint-lg) {
-    height: 300px;
-    object-fit: cover;
+
+  @include respond-from($breakpoint-md) {
+    max-height: 300px;
   }
 }
 
 .info {
   grid-area: text;
-  padding: 10px 27px 0 0;
   display: flex;
   flex-direction: column;
   text-align: start;
+  gap: $space-xs;
+  overflow: hidden;
+  margin-top: $space-sm;
+  height: 120px;
+  min-height: 100px;
+  max-height: 150px;
+  @include respond-from($breakpoint-lg) {
+    gap: 0;
+  }
+  @include respond-from($breakpoint-xl) {
+    height: 125px;
+  }
 }
 
 .title {
-  font-size: $font-md;
+  font-size: $font-sm;
+  @include respond-from($breakpoint-xl) {
+    font-size: calc($font-md * 1.1);
+    padding-right: $space-xs;
+  }
 }
 
 .date {
   font-size: $font-xs;
   color: var(--color-text-secondary);
-  margin: calc($space-xs / 2) calc($space-md * 2.5) $space-xs 0;
+  margin: 0 0 $space-xs 0;
+  padding-right: $space-sm;
+  @include respond-from($breakpoint-xl) {
+    padding-right: calc($space-lg * 2);
+  }
 }
 
 .description {
-  font-size: $font-md;
-  color: var(--color-text);
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  display: -webkit-box; 
-  -webkit-box-orient: vertical; 
-  -webkit-line-clamp: 3;
   font-size: $font-xs;
+  color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   margin-bottom: $space-sm;
+}
+
+.expanded {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  display: block;
 }
 
 .button {
@@ -148,10 +193,13 @@
   background-color: var(--color-accent);
   color: var(--color-text-inverted);
   border: none;
-  border-radius: 0;
-  cursor: pointer;
   font-size: $font-xs;
   height: 2.3rem;
+  
+  @include respond-from($breakpoint-sm) {
+    width: 100%;
+    justify-self: center;
+  }
 }
 
 :global(body.dark) {

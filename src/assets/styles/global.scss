@@ -8,6 +8,7 @@
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: var(--font-family-base);
   background-color: var(--color-bg);
@@ -19,11 +20,12 @@ h2 {
   font-size: $font-xl;
   font-weight: 100;
   margin-bottom: calc($space-xs * 1.2);
-  @include respond-to($breakpoint-lg) {
+  @include respond-from($breakpoint-lg) {
     font-size: calc($font-xl * 1.4);
   }
 }
 
+// Carousel styles
 .react-multi-carousel-list,
 .react-multi-carousel-track,
 .react-multi-carousel-item img {
@@ -31,7 +33,7 @@ h2 {
   @include respond-between($breakpoint-md, $breakpoint-lg) {
     height: 40vh !important;
   }
-  @include respond-between($breakpoint-lg, $breakpoint-xl) {
+  @include respond-from($breakpoint-lg) {
     height: 75vh !important;
   }
 }
@@ -54,9 +56,10 @@ h2 {
 
 .react-multiple-carousel__arrow {
   display: none;
-  @include respond-between($breakpoint-md, $breakpoint-xl) {
+  @include respond-from($breakpoint-lg) {
     display: block;
     background-color: transparent;
+    z-index: 10;
     &--left {
       left: 5px;
     }
@@ -86,7 +89,7 @@ h2 {
       width: 11px;
       height: 11px;
       border-width: 1px;
-      border-color: #beb7b7;
+      border-color: #d9d9d9;
       background-color: transparent;
       margin-right: calc($space-sm * 1.6);
       &:hover, &:active{

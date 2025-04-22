@@ -1,0 +1,76 @@
+.container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.selected {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: transparent;
+  font-size: $font-xs;
+  @include respond-from($breakpoint-lg) {
+    padding: $space-xs $space-sm;
+  }
+}
+
+.lang {
+    font-size: $font-sm;
+    font-weight: $font-weight-bold;
+    margin-left: calc($space-xs / 2);
+  @include respond-from($breakpoint-lg) {
+    font-size: calc($font-xs / 1.2);
+    font-weight: 100;
+  }
+}
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 10;
+  
+  @include respond-from($breakpoint-lg) {
+    left: $space-sm;
+    width: 50px;
+  }
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    font-size: $font-xs;
+    .lang {
+      color: var(--color-text);
+    }
+  }
+}
+
+.flag {
+  object-fit: cover;
+  width: 40px;
+  height: 30px;
+  border-radius: 7px;
+  @include respond-from($breakpoint-lg) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.chevronDown {
+  font-size: calc($font-xs);
+  color: var(--color-text-secondary);
+}
+
+:global(body.dark) {
+  .selected .lang,
+  .chevronDown {
+    color: var(--color-text);
+  }
+  .option .lang {
+    color: var(--color-text-inverted);
+  }
+}

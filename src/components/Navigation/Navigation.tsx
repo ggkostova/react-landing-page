@@ -23,6 +23,12 @@ const Navigation = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isLargeScreen && isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [isLargeScreen, isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };

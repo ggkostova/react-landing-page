@@ -15,7 +15,6 @@
     --white-color: #{$white};
 
     --font-family-base: #{$font-family-base};
-    --radius-md: #{$radius-md};
 }
   
 /* Dark theme overrides */
@@ -26,6 +25,6 @@ body.dark {
     --color-bg: var(--color-bg-dark);
     --color-text: #{$color-text-inverted};
     --color-text-inverted: #{$color-text};
-    --color-text-secondary: #d6d4d4;
+    --color-text-secondary: #{$color-text-secondary-dark};
     --color-accent: #{$color-accent-dark};
 }

@@ -20,6 +20,7 @@ const EventCard: React.FC<EventCardProps> = ({
   date,
   description,
 }) => {
+  
   const getIcon = (type: string) => {
     switch (type) {
       case "News":
@@ -57,7 +58,7 @@ const EventCard: React.FC<EventCardProps> = ({
           </div>
           <Button
             className={styles.button}
-            onClick={() => alert("Read more clicked!")}
+            onClick={() => alert("Button clicked!")}
           >
             READ MORE
           </Button>

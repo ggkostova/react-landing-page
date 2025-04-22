@@ -1,10 +1,8 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import styles from "./Footer.module.scss";
+import SocialMedia from "@/components/SocialMedia/SocialMediа";
 import siteData from "@/Data.json";
-import { TfiFacebook } from "react-icons/tfi";
-import { FaYoutube } from "react-icons/fa";
 import useScreenWidth from "@/composables/useScreenWidth";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   const footerData = siteData.footer;
@@ -60,16 +58,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.socialLinks}>
-        <span
-          className={`${styles.facebookWrapper} ${styles.socialIconWrapper}`}
-        >
-          <TfiFacebook />
-        </span>
-        <span
-          className={`${styles.youtubeWrapper} ${styles.socialIconWrapper}`}
-        >
-          <FaYoutube />
-        </span>
+        <SocialMedia />
       </div>
 
       <div className={styles.footerCopyright}>

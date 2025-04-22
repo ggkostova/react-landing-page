@@ -1,19 +1,16 @@
 import React from "react";
-import styles from "./LandingPage.module.scss";
 import Header from "@/layout/Header/Header";
 import CarouselWrapper from '@/layout/Carousel/Carousel';
-import SocialMedia from '@/components/SocialMedia/SocialMedia';
+import SocialMedia from '@/components/SocialMedia/SocialMediа';
 import Main from "@/layout/Main/Main";
 import Footer from "@/layout/Footer/Footer";
-import useScreenWidth from "@/composables/useScreenWidth";
+import styles from "./LandingPage.module.scss";
 
 const LandingPage = () => {
-  const isLargeScreen = useScreenWidth();
-
   return (
     <div>
       <Header />
-      { isLargeScreen && <SocialMedia/> }
+      <SocialMedia className={styles.socialContainer} iconClassName={styles.icon}/>
       <CarouselWrapper/>
       <Main />
       <Footer />

@@ -14,9 +14,14 @@
     top: 30%;
     padding: 0 $space-lg;
   }
-  @include respond-to($breakpoint-lg) {
-    top: 30%;
+  @include respond-between($breakpoint-lg, $breakpoint-xl) {
+    top: 20%;
     padding: 0 calc($space-lg * 3);
+    font-size: calc($font-xl * 1.8);
+  }
+  @include respond-from($breakpoint-xl) {
+    top: 20%;
+    font-size: calc($font-xl * 2);
   }
 }
 

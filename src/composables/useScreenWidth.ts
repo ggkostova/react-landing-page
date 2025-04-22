@@ -4,7 +4,7 @@ const useScreenWidth = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
   
     const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth > 1024); 
+      setIsLargeScreen(window.innerWidth >= 1024); 
     };
   
     useEffect(() => {

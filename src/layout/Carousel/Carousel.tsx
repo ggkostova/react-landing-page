@@ -53,12 +53,12 @@ const CarouselComponent: React.FC = () => {
         draggable={true}
       >
         {slides.map((slide) => {
-          const text = slide.text || ""; // "your"
-          const bold = slide.boldText || ""; // "best gaming experience"
+          const text = slide.text || ""; 
+          const bold = slide.boldText || ""; 
 
-          const boldWords = bold.split(" "); // ["best", "gaming", "experience"]
-          const firstBold = boldWords[0]; // "best"
-          const restBold = boldWords.slice(1).join(" "); // "gaming experience"
+          const boldWords = bold.split(" ");
+          const firstBold = boldWords[0]; 
+          const restBold = boldWords.slice(1).join(" ");
 
           return (
             <div key={slide.id} style={{ position: "relative" }}>

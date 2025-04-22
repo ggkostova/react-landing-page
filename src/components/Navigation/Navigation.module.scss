@@ -1,6 +1,6 @@
 .icon {
   font-size: $font-xl * 1.2;
-  @include respond-to($breakpoint-lg) {
+  @include respond-from($breakpoint-lg) {
     display: none;
   }
 }
@@ -10,6 +10,7 @@
   margin-right: calc($space-xs * 1.6);
   font-size: calc($font-md * 2.1);
 }
+
 .closeIcon {
   color: var(--color-accent);
   background-color: var(--color-secondary);
@@ -31,17 +32,27 @@
   top: $header-height;
   right: 0;
   width: 95%;
-  padding: $space-xs $space-xs * 1.5;
+  padding: $space-xs $space-xs * 1.5 $space-sm $space-xs * 1.5;
   z-index: 1000;
   background-color: var(--color-secondary);
   color: var(--color-text);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   opacity: 0;
+  transform: translateY(-20%);
   pointer-events: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-
+  transition: transform 0.7s ease, opacity 0.7s ease;
+  @include respond-between($breakpoint-sm, $breakpoint-md) {
+    width: 60%;
+  }
+  @include respond-between($breakpoint-md, $breakpoint-lg) {
+    width: 50%;
+  }
+  @include respond-from($breakpoint-xl) {
+    top: $header-height-large;
+  }
   &.menuOpen {
     opacity: 1;
+    transform: translateY(0);
     pointer-events: auto;
     @include respond-between($breakpoint-sm, $breakpoint-md) {
       width: 60%;

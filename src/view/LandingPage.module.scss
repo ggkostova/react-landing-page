@@ -1,4 +1,27 @@
-.layout {
-  display: flex;
+.socialContainer {
+  position: fixed;
+  top: 20%;
+  right: 0;
+  transform: translateY(-50%);
+  @include space-between-container;
+  gap: 0;
+  justify-content: space-around;
   flex-direction: column;
+  background-color: var(--color-secondary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: calc($space-xs / 2) 0;
+  box-sizing: border-box;
+  width: 45px;
+  height: 80px;
+  z-index: 100;
+  @include respond-from($breakpoint-lg) {
+    top: 25%;
+  }
+
+  .icon {
+    &:not(:last-child) {
+        padding-bottom: calc($space-xs / 1.2);
+        border-bottom: 1px solid var(--border-color);
+    }
+  }
 }

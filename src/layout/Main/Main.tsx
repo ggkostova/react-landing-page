@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Main.module.scss';
 import siteData from "@/Data.json";
 import EventCard from '@/components/EventCard/EventCard';
 import ProductWrapper from '@/components/ProductWrapper/ProductWrapper';
 import ImageWrapper from '@/components/ImageWrapper/ImageWrapper';
+import styles from './Main.module.scss';
 
 const Main = () => {
   const eventsData = siteData.eventCardsData;
